@@ -1,0 +1,297 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Eddie DaRoza — Mining Films</title>
+<meta name="description" content="Documentary cinematographer and editor for mining companies. Eight mine sites, five countries, three continents — underground, surface and aerial, finished in-house.">
+<meta property="og:title" content="Eddie DaRoza — Mining Films">
+<meta property="og:description" content="Documentary films for mining companies. Eight mine sites, five countries, three continents.">
+<meta property="og:type" content="website">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Chivo:wght@400;700;900&family=Newsreader:opsz,wght@6..72,300;6..72,400;6..72,500&family=IBM+Plex+Mono:wght@400;500&display=swap">
+<style>
+  /* Single-theme by intent: a film portfolio is a screening room. Every colour is painted
+     explicitly so the page holds on any host background. */
+  :root{
+    --ground:#0B0C0D; --surface:#141618; --raise:#1C1F22; --line:#2A2E32;
+    --ink:#EDEDEA; --ink-soft:#9DA0A0; --ink-faint:#6E7273;
+    --ore:#C9922E; --steel:#7FA3B5;
+    --disp:'Chivo',-apple-system,Helvetica,Arial,sans-serif;
+    --body:'Newsreader',Georgia,'Times New Roman',serif;
+    --mono:'IBM Plex Mono',ui-monospace,Menlo,monospace;
+  }
+  *{box-sizing:border-box}
+  html{-webkit-text-size-adjust:100%}
+  body{margin:0;background:var(--ground);color:var(--ink);
+    font-family:var(--body);font-size:18px;line-height:1.65;-webkit-font-smoothing:antialiased}
+  img,video{max-width:100%;display:block}
+  .wrap{max-width:1180px;margin:0 auto;padding:0 clamp(1.1rem,4vw,2.5rem)}
+
+  /* hero */
+  .hero{position:relative;min-height:min(88vh,760px);display:flex;align-items:flex-end;
+    border-bottom:1px solid var(--line);overflow:hidden;background:var(--ground)}
+  .hero-img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;opacity:.42;filter:saturate(.85)}
+  .hero-grad{position:absolute;inset:0;
+    background:linear-gradient(180deg,rgba(11,12,13,.55) 0%,rgba(11,12,13,.30) 42%,rgba(11,12,13,.96) 100%)}
+  .hero-in{position:relative;width:100%;padding:0 0 clamp(2.4rem,6vw,4.2rem)}
+  .eyebrow{font-family:var(--mono);font-size:.7rem;letter-spacing:.24em;text-transform:uppercase;
+    color:var(--ore);margin:0 0 1.1rem}
+  h1{font-family:var(--disp);font-weight:900;font-size:clamp(2.5rem,7.5vw,5.2rem);line-height:.96;
+    letter-spacing:-.02em;margin:0 0 1.1rem;max-width:16ch}
+  .lede{font-size:clamp(1.08rem,2.3vw,1.45rem);font-weight:300;color:var(--ink);max-width:46ch;margin:0 0 1.6rem}
+  .facts{display:flex;flex-wrap:wrap;gap:.5rem 2.2rem;font-family:var(--mono);font-size:.76rem;
+    letter-spacing:.1em;text-transform:uppercase;color:var(--ink-soft);margin:0}
+  .facts b{color:var(--ink);font-weight:500}
+
+  /* sections */
+  section{padding:clamp(3rem,7vw,5.5rem) 0}
+  h2{font-family:var(--disp);font-weight:700;font-size:clamp(.82rem,1.6vw,.92rem);
+    letter-spacing:.26em;text-transform:uppercase;color:var(--ore);margin:0 0 2.2rem;
+    padding-bottom:.9rem;border-bottom:1px solid var(--line)}
+
+  /* film */
+  .film{display:grid;grid-template-columns:minmax(0,1.45fr) minmax(0,1fr);gap:clamp(1.4rem,3vw,3rem);
+    padding:clamp(1.8rem,4vw,3rem) 0;border-bottom:1px solid var(--line);align-items:start}
+  .film:last-of-type{border-bottom:0}
+  .player{position:relative;background:#000;border:1px solid var(--line)}
+  .player video{width:100%;aspect-ratio:16/9;object-fit:cover;background:#000}
+  .film h3{font-family:var(--disp);font-weight:700;font-size:clamp(1.5rem,3vw,2.1rem);line-height:1.06;
+    letter-spacing:-.012em;margin:0 0 .35rem}
+  .client{font-family:var(--mono);font-size:.74rem;letter-spacing:.14em;text-transform:uppercase;
+    color:var(--steel);margin:0 0 1rem}
+  .film p{margin:0 0 1rem;color:var(--ink-soft);max-width:52ch}
+  .film p strong{color:var(--ink);font-weight:500}
+  .meta{list-style:none;margin:1.2rem 0 0;padding:0;font-family:var(--mono);font-size:.74rem;
+    line-height:1.9;color:var(--ink-faint);border-top:1px solid var(--line);padding-top:.9rem}
+  .meta b{color:var(--ink-soft);font-weight:400;display:inline-block;min-width:6.5em}
+
+  /* capability */
+  .cap{display:grid;grid-template-columns:repeat(auto-fit,minmax(230px,1fr));gap:1px;
+    background:var(--line);border:1px solid var(--line)}
+  .cap div{background:var(--surface);padding:1.4rem 1.5rem}
+  .cap h4{font-family:var(--disp);font-weight:700;font-size:1.02rem;margin:0 0 .5rem;letter-spacing:-.005em}
+  .cap p{margin:0;font-size:.94rem;color:var(--ink-soft)}
+
+  .say{font-size:clamp(1.15rem,2.6vw,1.6rem);font-weight:300;line-height:1.45;max-width:30ch;
+    margin:0;color:var(--ink)}
+  .say span{color:var(--ore)}
+  .two{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1.25fr);gap:clamp(1.5rem,4vw,3.5rem);align-items:start}
+  .two p{margin:0 0 1rem;color:var(--ink-soft)}
+  .two p:last-child{margin:0}
+
+  /* contact */
+  .contact{border-top:1px solid var(--line);background:var(--surface)}
+  .contact .wrap{padding-top:clamp(2.6rem,6vw,4rem);padding-bottom:clamp(2.6rem,6vw,4rem)}
+  .cta{font-family:var(--disp);font-weight:900;font-size:clamp(1.6rem,4.5vw,2.8rem);
+    letter-spacing:-.018em;margin:0 0 1.2rem;line-height:1.08}
+  a{color:var(--ore);text-decoration:none;border-bottom:1px solid rgba(201,146,46,.4)}
+  a:hover{border-bottom-color:var(--ore)}
+  a:focus-visible{outline:2px solid var(--ore);outline-offset:3px}
+  .lines{font-family:var(--mono);font-size:.95rem;line-height:2.1;color:var(--ink-soft);margin:0}
+  footer{border-top:1px solid var(--line);padding:1.6rem 0;font-family:var(--mono);
+    font-size:.7rem;letter-spacing:.08em;text-transform:uppercase;color:var(--ink-faint)}
+
+  @media (max-width:820px){
+    body{font-size:17px}
+    .film,.two{grid-template-columns:1fr}
+    h1{max-width:none}
+  }
+  @media (prefers-reduced-motion:reduce){*{animation:none!important;transition:none!important}}
+</style>
+</head>
+<body>
+
+<header class="hero">
+  <img class="hero-img" src="clips/silverviper_sonora.jpg" alt="Pack mules crossing a creek in the Sierra Madre, Sonora, Mexico">
+  <div class="hero-grad"></div>
+  <div class="hero-in"><div class="wrap">
+    <p class="eyebrow">Documentary films for mining companies</p>
+    <h1>I make films at the mine, not about it.</h1>
+    <p class="lede">
+      Eight mine sites. Five countries. Three continents. Underground, surface and aerial —
+      shot, cut, colored and finished by one person who has already been down the hole.
+    </p>
+    <p class="facts">
+      <span><b>Eddie DaRoza</b> · Cinematographer &amp; Editor</span>
+      <span>Los Angeles + Santa Cruz, CA</span>
+      <span><b>Available</b> — Nevada, Arizona, Utah, California</span>
+    </p>
+  </div></div>
+</header>
+
+<section><div class="wrap">
+  <h2>Selected work</h2>
+
+  <article class="film">
+    <div class="player">
+      <video controls preload="none" playsinline poster="clips/anfield_velvetwood.jpg">
+        <source src="clips/anfield_velvetwood.mp4" type="video/mp4">
+        Your browser cannot play this clip.
+      </video>
+    </div>
+    <div>
+      <h3>Velvet-Wood Groundbreaking</h3>
+      <p class="client">Anfield Energy · TSXV: AEC · Utah, USA · Uranium &amp; vanadium</p>
+      <p>
+        The day a permitted American uranium mine broke ground. A federal expedited-permitting
+        decision, a ceremony in the desert, and the mill that has to be ready when the ore arrives —
+        <strong>cut into a three-minute film an investor can watch before a call.</strong>
+      </p>
+      <p>Ceremony coverage, aerials over the portal and waste dump, management interviews, ore and plant detail.</p>
+      <ul class="meta">
+        <li><b>Format</b> 1080p · 24 fps · 3:00 finished</li>
+        <li><b>Shot</b> Ground, aerial, interior plant</li>
+        <li><b>Delivered</b> 2026</li>
+      </ul>
+    </div>
+  </article>
+
+  <article class="film">
+    <div class="player">
+      <video controls preload="none" playsinline poster="clips/silverviper_sonora.jpg">
+        <source src="clips/silverviper_sonora.mp4" type="video/mp4">
+        Your browser cannot play this clip.
+      </video>
+    </div>
+    <div>
+      <h3>La Virginia — Sonora Gold</h3>
+      <p class="client">Silver Viper Minerals · TSXV: VIPR · Sonora, Mexico · Silver &amp; gold</p>
+      <p>
+        Eastern Sierra Madre Occidental. Drill pads reached by mule train, a camp four hours from
+        pavement, and a trend that runs from El Tigre through La Virginia to Dolores —
+        <strong>told as a place, not a slide.</strong>
+      </p>
+      <p>Aerials, drill-floor detail, bilingual field interviews, animated trend and claim maps.</p>
+      <ul class="meta">
+        <li><b>Format</b> 2.39:1 · 24 fps · 4:20 finished</li>
+        <li><b>Shot</b> Remote camp, pack-in access</li>
+        <li><b>Delivered</b> 2026</li>
+      </ul>
+    </div>
+  </article>
+
+  <article class="film">
+    <div class="player">
+      <video controls preload="none" playsinline poster="clips/wrlg_goldenrunway.jpg">
+        <source src="clips/wrlg_goldenrunway.mp4" type="video/mp4">
+        Your browser cannot play this clip.
+      </video>
+    </div>
+    <div>
+      <h3>The Golden Runway</h3>
+      <p class="client">West Red Lake Gold · TSXV: WRLG · Red Lake, Ontario · Gold</p>
+      <p>
+        A past-producing mine being brought back. Mill commissioning, underground development and
+        the maintenance shop that decides whether a restart schedule is real —
+        <strong>filmed while the work was actually happening.</strong>
+      </p>
+      <p>Underground and mill coverage, aerials of the headframe and haul roads, executive and technical interviews with lower thirds.</p>
+      <ul class="meta">
+        <li><b>Format</b> 1080p · 23.98 fps · 3:31 finished</li>
+        <li><b>Shot</b> Underground, mill, aerial</li>
+        <li><b>Delivered</b> 2024</li>
+      </ul>
+    </div>
+  </article>
+
+  <article class="film">
+    <div class="player">
+      <video controls preload="none" playsinline poster="clips/firstnordic_sweden.jpg">
+        <source src="clips/firstnordic_sweden.mp4" type="video/mp4">
+        Your browser cannot play this clip.
+      </video>
+    </div>
+    <div>
+      <h3>The Analyst Tour</h3>
+      <p class="client">First Nordic Metals · TSXV: FNM · Västerbotten, Sweden · District-scale gold</p>
+      <p>
+        Analysts and bankers walking the outcrop in the Swedish boreal forest. This is the room where
+        capital decides what it thinks — <strong>and the footage that lets everyone who could not fly
+        to Sweden stand on the same rock.</strong>
+      </p>
+      <p>Site-tour coverage, trench and core-shack detail, aerials over drill roads and lakes.</p>
+      <ul class="meta">
+        <li><b>Format</b> 720p · 24 fps · site-tour library</li>
+        <li><b>Shot</b> Boreal field season, on tour</li>
+        <li><b>Delivered</b> 2025</li>
+      </ul>
+    </div>
+  </article>
+</div></section>
+
+<section><div class="wrap">
+  <h2>Why a mining company hires me and not a video crew</h2>
+  <div class="two">
+    <p class="say">
+      Most crews have never been underground. <span>I have been down eight of them, on three
+      continents, and I have never slowed a site tour down.</span>
+    </p>
+    <div>
+      <p>
+        I work the way your technical people do: I turn up with the right PPE, I understand what a
+        headframe, a core shack and a Merrill-Crowe circuit actually are, and I know which shot tells
+        an investor that the mill is real.
+      </p>
+      <p>
+        I have shot alongside the analyst site tours — the ones where the bankers and the print press
+        walk the ground. That is the standard I shoot to, and it is why my footage tends to end up in
+        the deck, the news release and the AGM rather than in a folder.
+      </p>
+      <p>
+        One person, one invoice: camera, drone, sound, edit, colour and finish. For a junior that
+        means no production-company overhead. For a producer or an IR firm, it means a second unit
+        who can be dropped into the Southwest on short notice.
+      </p>
+    </div>
+  </div>
+</div></section>
+
+<section><div class="wrap">
+  <h2>What I deliver</h2>
+  <div class="cap">
+    <div>
+      <h4>Site &amp; drill-program films</h4>
+      <p>The two-to-four minute film that shows the asset — for the website, the deck, the news release and the roadshow.</p>
+    </div>
+    <div>
+      <h4>Management interviews</h4>
+      <p>CEO, technical and IR interviews shot on site rather than against a hotel curtain, with graphics and lower thirds.</p>
+    </div>
+    <div>
+      <h4>Aerial &amp; underground</h4>
+      <p>Drone over the pit, portal and haul roads; cleared and equipped for underground development and mill interiors.</p>
+    </div>
+    <div>
+      <h4>Community &amp; ESG</h4>
+      <p>Permitting, reclamation and local-hire stories — the material that has to exist before a hearing, not after.</p>
+    </div>
+    <div>
+      <h4>Conference &amp; investor day</h4>
+      <p>Booth loops, presentation capture and short cuts sized for the show floor and for social.</p>
+    </div>
+    <div>
+      <h4>Post on your footage</h4>
+      <p>Edit, colour, sound and finish in Premiere or Resolve on material your team already shot.</p>
+    </div>
+  </div>
+</div></section>
+
+<section class="contact"><div class="wrap">
+  <p class="cta">If your rigs are turning this quarter,<br>that film is only shootable now.</p>
+  <p class="lines">
+    <a href="mailto:eddiedaroza@gmail.com">eddiedaroza@gmail.com</a><br>
+    (831) 251-0236<br>
+    Los Angeles &amp; Santa Cruz, California
+  </p>
+  <p style="color:var(--ink-soft);max-width:52ch;margin:1.4rem 0 0;font-size:.98rem">
+    Full films for any of the above are available on request. Nevada, Arizona, Utah and California
+    are a drive; the rest of the West is a short flight.
+  </p>
+</div></section>
+
+<footer><div class="wrap">Eddie DaRoza · Documentary cinematography for mining · Clips are excerpts, © their respective companies</div></footer>
+
+</body>
+</html>
