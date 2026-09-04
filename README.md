@@ -1,10 +1,10 @@
 # Eddie DaRoza — Mining Films
 
 Portfolio site. Documentary cinematography and post for mining companies.
-Static HTML + four self-hosted 34-second excerpt clips. No build step, no dependencies.
+Static HTML + five self-hosted ~34-second excerpt clips. No build step, no dependencies.
 
 - `index.html` — the whole site
-- `clips/` — four excerpt clips (mp4, h264, faststart) + poster frames
+- `clips/` — five excerpt clips (mp4, h264, faststart) + poster frames
 
 Clips are 34-second excerpts of client-commissioned films, self-hosted so nothing depends on a
 third-party player. `preload="none"` means no video downloads until a visitor presses play.
